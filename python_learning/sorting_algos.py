@@ -31,19 +31,9 @@ sort_list = [9, 2, 1, 4, 7, 6, 5, 3, 8]
 sort_list2 = [7, 4, 5, 2, 6, 1, 3, 9, 8]
 
 alist = [54,26,93,17,77,31,44,55,20]
-bubbleSort(sort_list)
 print(sort_list)
 
 #Print methods
 print("sort list", sort_list, sort_list2)
 print("insertion sort", insertionsort(sort_list2))
 print("quick sort", quicksort(sort_list2))
-print("bubble sort", bubbleSort(sort_list2))
-
-class Sort_Algorithms(object):
-    def __repr__(self):
-        sort_list = [9, 2, 1, 4, 7, 6, 5, 3, 8]
-        return 
-
-if __name__ == "__main__":
-    print(Sort_Algorithms())
