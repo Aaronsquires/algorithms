@@ -21,7 +21,6 @@ def reverseStringRecursion(left, right) -> None:
         List[left], List[right] = List[right], List[left]
         left + 1, right - 1
     
-    #pass in the head and tail index
     return List
 
 if __name__ == "__main__":
