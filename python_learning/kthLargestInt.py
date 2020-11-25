@@ -24,13 +24,19 @@ kthLargest.add(4);   // return 8
 
 class KthLargest:
 
+    # set the initialisers
     def __init__(self, k: int, nums: list):
+        # nums is an array
         self.array = nums
+        # k is a single int
         self.k = k
 
     def add(self, val: int) -> int:
+        # add the value to the array
         self.array.append(val)
+        # sort the array 
         self.array.sort()
+        # returns the array 
         return self.array[len(self.array)-self.k]
         
 Kth = KthLargest(3, [4,5,8,2])
