@@ -1,8 +1,8 @@
 class Node:
-  def __init__(self, value, next_node=None, prev_node=None):
+  def __init__(self, value, next_node=None, previous_node=None):
     self.value = value
     self.next_node = next_node
-    self.prev_node = prev_node
+    self.previous_node = previous_node
     
   def set_next_node(self, next_node):
     self.next_node = next_node
@@ -10,11 +10,11 @@ class Node:
   def get_next_node(self):
     return self.next_node
 
-  def set_prev_node(self, prev_node):
-    self.prev_node = prev_node
+  def set_previous_node(self, previous_node):
+    self.previous_node = previous_node
     
-  def get_prev_node(self):
-    return self.prev_node
+  def get_previous_node(self):
+    return self.previous_node
   
   def get_value(self):
     return self.value
@@ -30,7 +30,7 @@ class DoublyLinkedList:
     current_head = self.head_node
 
     if current_head != None:
-      current_head.set_prev_node(new_head)
+      current_head.set_previous_node(new_head)
       new_head.set_next_node(current_head)
 
     self.head_node = new_head
@@ -44,7 +44,7 @@ class DoublyLinkedList:
 
     if current_tail != None:
       current_tail.set_next_node(new_tail)
-      new_tail.set_prev_node(current_tail)
+      new_tail.set_previous_node(current_tail)
 
     self.tail_node = new_tail
 
@@ -60,7 +60,7 @@ class DoublyLinkedList:
     self.head_node = removed_head.get_next_node()
 
     if self.head_node != None:
-      self.head_node.set_prev_node(None)
+      self.head_node.set_previous_node(None)
 
     if removed_head == self.tail_node:
       self.remove_tail()
@@ -73,7 +73,7 @@ class DoublyLinkedList:
     if removed_tail == None:
       return None
 
-    self.tail_node = removed_tail.get_prev_node()
+    self.tail_node = removed_tail.get_previous_node()
 
     if self.tail_node != None:
       self.tail_node.set_next_node(None)
@@ -103,9 +103,9 @@ class DoublyLinkedList:
       self.remove_tail()
     else:
       next_node = node_to_remove.get_next_node()
-      prev_node = node_to_remove.get_prev_node()
-      next_node.set_prev_node(prev_node)
-      prev_node.set_next_node(next_node)
+      previous_node = node_to_remove.get_previous_node()
+      next_node.set_previous_node(previous_node)
+      previous_node.set_next_node(next_node)
 
     return node_to_remove
 
@@ -131,10 +131,10 @@ class DoublyLinkedList:
     # print("next_node " + str(next_node.get_value()))
 
     if new_node != None:
-      new_node.set_prev_node(first_node)
+      new_node.set_previous_node(first_node)
       new_node.set_next_node(next_node)
       first_node.set_next_node(new_node)
-      next_node.set_prev_node(new_node)
+      next_node.set_previous_node(new_node)
 
 
   def print_list(self):

@@ -14,6 +14,7 @@ def insertionsort(list):
         list[position] = current
     return list
 
+
 #Quick Sort
 def quicksort(list):
     if len(list) <=1:

@@ -67,6 +67,28 @@ class LinkedList:
     else:
       return list_value
 
+  def removeNthFromEnd(self, n: int):
+          list_length = 1
+          head = self.get_head_node()
+          node = head
+          
+          while(node!=None):
+              list_length +=1 
+              node = node.get_next_node()
+              
+          node_to_remove = list_length - n
+          
+          if(node_to_remove == 1):
+              head = head.get_next_node()
+          else:
+              node = head
+              i = 1
+              while((i+1)!=node_to_remove):
+                  i+=1
+                  node = node.get_next_node()
+              node.next = node.get_next_node().get_next_node()
+          
+          return head
 
 
 ll = LinkedList()
@@ -75,6 +97,9 @@ ll.insert_beginning(5675)
 ll.insert_beginning(90)
 print(ll.get_list())
 print("value: " + ll.get_list_value(90))
+
+ll.removeNthFromEnd(1)
+print(ll.get_list())
 
 
 
