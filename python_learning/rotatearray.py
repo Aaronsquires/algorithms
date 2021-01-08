@@ -34,26 +34,18 @@
 # N and K are integers within the range [0..100];
 # each element of array A is an integer within the range [−1,000..1,000].
 # In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
+ 
+def solution(a,k):
+    b = None
 
-
-def solution(a, k):
     if len(a) == 0:
         return a
 
-    rotations = k % len(a)
-    return a[-rotations:] + a[:-rotations]
-
-# def solution(a,k):
-#     b = []
-
-#     while (k > 0):
-#         for i in range(0, len(a)):
-#             b[i] = a[i-1]
-
-#         a = b
-#         k -= 1
+    if (k > 0):
+        rotations = k % len(a)
+        b = a[-rotations:] + a[:-rotations]
     
-#     return b
+    return b
 
 
 
