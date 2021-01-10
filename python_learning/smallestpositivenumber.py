@@ -41,4 +41,8 @@ def solution(A):
             return i + 1
     
     return i + 2
+
+    for i in range(1, max(l)):
+        if i not in  l: 
+            break
             

@@ -20,23 +20,30 @@ def solution(a):
 
     if duplicate == True:
         array = list(set(array))
-
-    # calculated using the formula (n+1)*(n+2)/2
-    total = (len(array) + 1) * (len(array) + 2) / 2
-    # calculate the sum of all the numbers in the array
-    array_total = sum(array)
-
-    # take away the total and the current array total
-    print(total - array_total)
     
+    # checks that n is at the last element
+    if a[-1] != len(a):
+        return len(a)
+
+    # then the missing number is on the range (0, n)
+    for i in range(1, len(a)):
+        missing_number = a[i-1] + 1
+        if a[i] != missing_number:
+            return missing_number
 
 
 
 
-
-array = [1,2,3,5]
-array2 = [1,3,5,2,6]
+array1 = [1,2,3,5]
+array2 = [9,6,4,2,3,5,7,0,1]
 array3 = [1,3,5,2,4,4]
+array4 = [0, 1]
+array5 = [0]
 
-solution(array3)
+# solution(array4)
 
+print(solution(array1))
+print(solution(array2))
+print(solution(array3))
+print(solution(array4))
+print(solution(array5))
