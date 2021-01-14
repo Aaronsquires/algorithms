@@ -11,3 +11,5 @@ def solution(A):
     return result
 
 print(solution([5,-7,3,5,-2,4,1]))
+print(solution([-1, -1, 1, -1, 1, 0, 1, -1, -1]))
+print(solution([1, 1, -1, -1, -1, -1, -1, 1, 1]))

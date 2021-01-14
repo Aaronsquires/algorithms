@@ -49,9 +49,9 @@ def solution(a,k):
 
 
 
-print(solution([3, 8, 9, 7, 6], 3))
-print(solution([0, 0, 0], 1))
-print(solution([1, 2, 3, 4], 4))
+print(solution([3, 8, 9, 7, 6], 3)) #[9, 7, 6, 3, 8]
+print(solution([0, 0, 0], 1)) #[0, 0, 0]
+print(solution([1, 2, 3, 4], 2)) #[3, 4, 1, 2]
 
 #     [3, 8, 9, 7, 6] -> [6, 3, 8, 9, 7]
 #     [6, 3, 8, 9, 7] -> [7, 6, 3, 8, 9]
