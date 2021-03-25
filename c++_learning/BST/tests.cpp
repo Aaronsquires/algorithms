@@ -1,0 +1,6 @@
+#define BOOST_TEST_MODULE BstTestModule
+#include <boost/test/included/unit_test.hpp>#include "BST.h"BOOST_AUTO_TEST_CASE(lookup_empty_list){
+	BST bst;		BOOST_CHECK_EQUAL(bst.lookup(1), nullptr);	BOOST_CHECK_EQUAL(bst.lookup(28), nullptr);}BOOST_AUTO_TEST_CASE(insert_lookup_one_element){
+	BST bst;	BOOST_CHECK_EQUAL(bst.lookup(1), nullptr);	bst.insert(1, "One");	BOOST_CHECK_EQUAL(*bst.lookup(1), "One");}BOOST_AUTO_TEST_CASE(insert_lookup_two_elements){
+	BST bst;	BOOST_CHECK_EQUAL(bst.lookup(1), nullptr);	BOOST_CHECK_EQUAL(bst.lookup(2), nullptr);	bst.insert(1, "One");	bst.insert(2, "Two");	BOOST_CHECK_EQUAL(*bst.lookup(2), "Two");}BOOST_AUTO_TEST_CASE(insert_lookup_multiple_elements){
+	BST bst;	BOOST_CHECK_EQUAL(bst.lookup(1), nullptr);	BOOST_CHECK_EQUAL(bst.lookup(28), nullptr);	bst.insert(1, "One");	bst.insert(28, "Twenty Eight");	bst.insert(42, "Fourty Two");	bst.insert(45, "Fourty Five");	bst.insert(18, "Eighteen");	bst.insert(47, "Fourty Seven");	BOOST_CHECK_EQUAL(*bst.lookup(1), "One");	BOOST_CHECK_EQUAL(*bst.lookup(28), "Twenty Eight");	BOOST_CHECK_EQUAL(*bst.lookup(42), "Fourty Two");	BOOST_CHECK_EQUAL(*bst.lookup(45), "Fourty Five");	BOOST_CHECK_EQUAL(*bst.lookup(18), "Eighteen");	BOOST_CHECK_EQUAL(*bst.lookup(47), "Fourty Seven");}
